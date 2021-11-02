@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-//check if response 
+//check if API its alive
 app.get('/ping',(req,res) => {
     res.status(200).send('pong');
 });
