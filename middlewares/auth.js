@@ -18,6 +18,10 @@ async function loginUser(req, res) {
         process.env.TOKEN_INSURANCE = `${tokenInsurance.type} ${tokenInsurance.token}`;
     
         const clients = await getClientsIndurance(process.env.TOKEN_INSURANCE);
+        if(!clients) {
+            console.log('dentro de if clients', clients);
+            throw  {status: 500, message: 'Fail to get token'};
+        }
         const {name,role} = clients.find(el => el.name == username);
         
         if(!name || password != process.env.CLIENT_SECRET) {

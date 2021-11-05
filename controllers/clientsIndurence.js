@@ -8,7 +8,7 @@ async function getClientsIndurance() {
         const clients = await axios.get(url,{headers: {Authorization: process.env.TOKEN_INSURANCE}});
         return clients.data;
     } catch (error) {
-        throw error.response.data;
+        return {status:500, message: 'Error with authorization Indurance'};
     }
 }
 

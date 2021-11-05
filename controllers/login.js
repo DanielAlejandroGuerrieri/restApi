@@ -14,7 +14,7 @@ async function getTokenInsurance() {
         const token = await axios.post(b2bTokenUrl, data);
         return token.data;
     } catch (error) {
-        throw error;
+        throw {status: 500, message: 'Not can get token'};
     }
 }
 
