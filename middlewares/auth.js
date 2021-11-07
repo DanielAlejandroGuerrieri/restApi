@@ -2,10 +2,10 @@ const jwt = require('jsonwebtoken');
 const dotEnv = require('dotenv');
 dotEnv.config();
 
-const { getClientsIndurance } = require('../controllers/clientsIndurence');
+const { getClientsInsurance } = require('../controllers/clientsInsurance');
 const {getTokenInsurance}=require('../controllers/login');
 
-
+//Login de usuario y obtención de token
 async function loginUser(req, res) {
     try {
         const { username, password } = req.body;
@@ -17,9 +17,8 @@ async function loginUser(req, res) {
     
         process.env.TOKEN_INSURANCE = `${tokenInsurance.type} ${tokenInsurance.token}`;
     
-        const clients = await getClientsIndurance(process.env.TOKEN_INSURANCE);
+        const clients = await getClientsInsurance(process.env.TOKEN_INSURANCE);
         if(!clients) {
-            console.log('dentro de if clients', clients);
             throw  {status: 500, message: 'Fail to get token'};
         }
         const {name,role} = clients.find(el => el.name == username);

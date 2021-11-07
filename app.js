@@ -35,5 +35,5 @@ app.use('/auth', routes)
 
 
 app.listen(port, () => {
-    console.log(`API REST running in http://localhost:${port}`);
+    console.log(`Server is running in http://localhost:${port}`);
 });
