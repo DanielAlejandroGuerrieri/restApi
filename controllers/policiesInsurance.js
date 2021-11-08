@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 async function getPoliciesInsurance() {
     const url = `${process.env.SERVICE_URL}/policies`;
 

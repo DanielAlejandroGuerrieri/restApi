@@ -1,5 +1,4 @@
 const getPoliciesByClientId = require('../../controllers/getPoliciesByClientId').getPolicieById;
-const { clientsMock} = require('../mocks/clientsMock');
 const { policiesMock } = require('../mocks/policiesMock');
 
 describe('getPoliciesByClientId.controller', () => {
@@ -44,7 +43,7 @@ describe('getPoliciesByClientId.controller', () => {
             installmentPayment: false,
             clientId: '1'
         }];
-
+        
         //type of result
         expect(typeof getPoliciesByClientId(clientMock, policiesMock)).toBe('object');
         //Should the result to be like the short policies values
