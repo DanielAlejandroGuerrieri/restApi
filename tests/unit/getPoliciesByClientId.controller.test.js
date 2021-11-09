@@ -46,10 +46,12 @@ describe('getPoliciesByClientId.controller', () => {
         
         //type of result
         expect(typeof getPoliciesByClientId(clientMock, policiesMock)).toBe('object');
+        expect(getPoliciesByClientId(clientMock, policiesMock)).toBeInstanceOf(Array);
         //Should the result to be like the short policies values
         expect(getPoliciesByClientId(clientMock, policiesMock)).toEqual(shortPolicies);
         //should the result to be like in the complete policies values
-        expect(getPoliciesByClientId(clientMock, policiesMock, false)).toEqual(completePolicies)
+        expect(getPoliciesByClientId(clientMock, policiesMock, false)).toEqual(completePolicies);
+        
 
     });
 });

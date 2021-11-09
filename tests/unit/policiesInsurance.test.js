@@ -10,7 +10,7 @@ describe('Test getPoliciesInsurance with a mock values', () => {
         axios.get.mockResolvedValue({data: policiesMock});
         const data = await getPoliciesInsurance();
 
-        expect(typeof data).toEqual('object');
+        expect(data).toBeInstanceOf(Array);
         expect(data).toBe(policiesMock);
     });    
 });

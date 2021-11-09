@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const clients = require('../services/clients');
-const policies = require('../services/policies');
+const clientsService = require('../services/clients');
+const policiesService = require('../services/policies');
 
-router.use('/clients', clients);
-router.use('/policies', policies);
+router.use('/clients', clientsService);
+router.use('/policies', policiesService);
 
 module.exports = router;
 
