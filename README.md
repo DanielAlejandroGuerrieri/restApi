@@ -93,8 +93,6 @@ _To exit from tests press key CTRL+C_
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
 * **Daniel A. Guerrieri** - *Backend test* - [daniel.guerrieri@gmail.com](https://github.com/DanielAlejandroGuerrieri)
 
 
