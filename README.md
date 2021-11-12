@@ -15,11 +15,12 @@ npm i
 
 ## Getting started 🚀
 
-_With the next intructions, you can run the file app.js in the local server in development environment, from the command console and in the root of the project, you must write:_
+_With the next intructions, you can run the file app.js in the local server, from the command console and in the root of the project, you must write:_
 
 ```
-npm run dev
+npm run start
 ```
+
 
 
 ### Performance 🔧
@@ -93,6 +94,7 @@ _To exit from tests press key CTRL+C_
 * [NodeJs]
 * [Express]
 * [NPM]
+* [Nodemon]
 * [Jest]
 * [Supertest]
 
