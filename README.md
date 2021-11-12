@@ -52,6 +52,12 @@ GET/auth/clients?limit=value
 GET/auth/clients?name=value
 ```
 
+_To get a client by id:_
+
+```
+GET/auth/clients/:id
+```
+
 _To get a list complete of policies by client id:_
 
 ```
