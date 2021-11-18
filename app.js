@@ -19,7 +19,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/auth', auth.validateToken);
 
 //check if API its alive
 app.get('/ping', (req, res) => {
@@ -31,7 +30,7 @@ app.post('/login', auth.loginUser);
 
 
 //Routes
-app.use('/auth', routes)
+app.use('/', auth.validateToken, routes);
 
 
 app.listen(port, () => {

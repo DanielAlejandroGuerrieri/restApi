@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../app');
 
-const endpointUrl = '/auth/clients';
+const endpointUrl = '/clients';
 
 jest.setTimeout(10000);
 
@@ -29,6 +29,7 @@ describe(endpointUrl, () => {
         const login = await request(app)
             .post(loginUrl)
             .send(body);
+
 
         const response = await request(app)
             .get(endpointUrl)

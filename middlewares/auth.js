@@ -9,6 +9,7 @@ const { getTokenInsurance } = require('../controllers/login');
 async function loginUser(req, res) {
     try {
         const { username, password } = req.body;
+
         if (!username || !password) {
             throw { status: 400, message: 'Username and password are required' }
         }
@@ -18,16 +19,19 @@ async function loginUser(req, res) {
         process.env.TOKEN_INSURANCE = `${tokenInsurance.type} ${tokenInsurance.token}`;
 
         const clients = await getClientsInsurance(process.env.TOKEN_INSURANCE);
+        
         if (!clients) {
             throw { status: 500, message: 'Fail to get token' };
         }
-        const { name, role } = clients.find(el => el.name == username);
 
-        if (!name || password != process.env.CLIENT_SECRET) {
+        const client = clients.find(el => el.name == username);  
+        
+        if (!client || password != process.env.CLIENT_SECRET) {
             throw { status: 401, message: 'Invalid username or password' }
         }
 
-        const payload = { username, password, role };
+        const payload = { username, password, role: client.role };
+
         const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '1h' });
         res.status(201).json({
             token,
