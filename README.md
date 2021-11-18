@@ -27,54 +27,98 @@ npm run start
 
 _First of all we need to obtain the access token, so you must login and a valid token will be provided_
 
-_You can get the token from this endpoint:_
+_You can get the token from the next endpoint:_
 
 ```
 POST/login
 ```
 
+_With a request body in the following format:_
+
+```
+{
+    "username": "string",
+    "password": "string"
+}
+```
+_Example:_
+
+    For a client with the role admin: 
+    
+```
+    {
+        "username": "Britney",
+        "password": "s3cr3t"
+    }
+```
+
+    For a client with the role user: 
+    
+```
+    {
+        "username": "Barnett",
+        "password": "s3cr3t"
+    }
+```
+
+_The type of response is:_
+```
+    {
+        "token": "string",
+        "type": Bearer,
+        "expires_in": 3600
+    }
+```
+Send this token in the Authorization header when making requests to protected resources, like this: 
+
+```
+Authorization: Bearer <token>
+```
+
+
 _To get a list complete of clients:_
 
 ```
-GET/auth/clients
+GET/clients
 ```
 
 _To get a list complete of clients filters with a limit of values and/or filter by name:_
 
 ```
-GET/auth/clients?limit=value&name=value
+GET/clients?limit=value&name=value
 ```
 
 ```
-GET/auth/clients?limit=value
+GET/clients?limit=value
 ```
 
 ```
-GET/auth/clients?name=value
+GET/clients?name=value
 ```
 
 _To get a client by id:_
 
 ```
-GET/auth/clients/:id
+GET/clients/:id
 ```
 
 _To get a list complete of policies by client id:_
 
 ```
-GET/auth/clients/:id/policies
+GET/clients/:id/policies
 ```
 
 _To get a list complete of policies :_
 ```
-GET/auth/policies
+GET/policies
 ```
 
 _To get a list of policies by policie id:_
 
 ```
-GET/auth/policies/:policieId
+GET/policies/:policieId
 ```
+
 
 
 ## Running the tests ⚙️
@@ -84,8 +128,6 @@ _Run the tests with command:_
 ```
 npm run test
 ```
-
-_To exit from tests press key CTRL+C_
 
 
 
@@ -102,6 +144,4 @@ _To exit from tests press key CTRL+C_
 ## Autores ✒️
 
 * **Daniel A. Guerrieri** - *Backend test* - [daniel.guerrieri@gmail.com](https://github.com/DanielAlejandroGuerrieri)
-
-
 
