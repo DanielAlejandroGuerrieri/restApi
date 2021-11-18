@@ -41,8 +41,10 @@ _With a request body in the following format:_
     "password": "string"
 }
 ```
-#### Example:
-    For an admin is: 
+_Example:_
+
+    For a client with the role admin: 
+    
 ```
     {
         "username": "Britney",
@@ -50,7 +52,8 @@ _With a request body in the following format:_
     }
 ```
 
-    For an user is: 
+    For a client with the role user: 
+    
 ```
     {
         "username": "Barnett",
@@ -58,7 +61,7 @@ _With a request body in the following format:_
     }
 ```
 
-The type of response is:
+_The type of response is:_
 ```
     {
         "token": "string",
@@ -66,7 +69,7 @@ The type of response is:
         "expires_in": 3600
     }
 ```
-You must send this token in the Authorization header when making requests to protected resources, like this: 
+Send this token in the Authorization header when making requests to protected resources, like this: 
 
 ```
 Authorization: Bearer <token>
@@ -140,6 +143,4 @@ npm run test
 ## Autores ✒️
 
 * **Daniel A. Guerrieri** - *Backend test* - [daniel.guerrieri@gmail.com](https://github.com/DanielAlejandroGuerrieri)
-
-
 
